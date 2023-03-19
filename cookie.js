@@ -1,6 +1,7 @@
-function setCookie(cname, cvalue, exdays) {
+var cname="popup",user="true";
+function setCookie(cname, cvalue) {
     const d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
     let expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
@@ -21,14 +22,14 @@ function setCookie(cname, cvalue, exdays) {
   }
   
   function checkCookie() {
-    let user = getCookie("username");
-    if (user != "") {
-      alert("Welcome again " + user);
+    let user = getCookie(cname);
+    if (user == "true") {
+      console.log("user");
     } else {
-      user = prompt("Please enter your name:", "");
-      if (user != "" && user != null) {
-        setCookie("username", user, 365);
-      }
+        alert("NEW OFFER");
+        if (user != "" && user != null) {
+          setCookie(cname, user);
+        }
     }
   }
 
