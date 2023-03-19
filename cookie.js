@@ -1,5 +1,8 @@
-var cname="popup",user="true";
+var cname="popup";
+var cvalue="true";
+
 function setCookie(cname, cvalue) {
+    console.log(cvalue);
     const d = new Date();
     d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
     let expires = "expires="+d.toUTCString();
@@ -23,12 +26,11 @@ function setCookie(cname, cvalue) {
   
   function checkCookie() {
     let user = getCookie(cname);
-    if (user == "true") {
+    if (user === "true") {
       console.log("user");
     } else {
         alert("NEW OFFER");
-          setCookie(cname, user);
-        
+          setCookie(cname, cvalue);
     }
   }
 
