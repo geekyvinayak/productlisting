@@ -27,9 +27,8 @@ function setCookie(cname, cvalue) {
       console.log("user");
     } else {
         alert("NEW OFFER");
-        if (user != "" && user != null) {
           setCookie(cname, user);
-        }
+        
     }
   }
 
