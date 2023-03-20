@@ -101,4 +101,18 @@ function shortProducts(currentorder){
      productCardCreation(tempproducts);
 }
 
+function clearall() {
+    var radioButton = document.getElementById("left");
+    radioButton.checked = false;
+    var radioButton1 = document.getElementById("left1");
+    radioButton1.checked = false;
+    var radioButton2 = document.getElementById("left2");
+    radioButton2.checked = false;
+    var checkbox = document.getElementById("shorting");
+    checkbox.value= "a-z";
+    tempproducts = products;
+    currentorder = 'a-z';
+    shortProducts(currentorder);
+}
+
 window.onload=shortProducts(currentorder);
